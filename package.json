@@ -1,0 +1,18 @@
+{
+  "name": "Redhat Hands-on Labs",
+  "version": "1.0.0",
+  "description": "The Section Opertate of Redhat Hands-on Labs ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@notionhq/client": "^2.2.15",
+    "axios": "^1.11.0",
+    "dotenv": "^16.4.7",
+    "notion-to-md": "^3.1.9"
+  },
+  "type": "module"
+}
