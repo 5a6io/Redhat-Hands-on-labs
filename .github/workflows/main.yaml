@@ -1,12 +1,9 @@
 name: Convert Notion to Markdown
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
-      - main
+      - action
   schedule:
     - cron: "0 14 * * *" # 매일 오후 11시에 수행
 
@@ -24,19 +21,19 @@ jobs:
           npm install axios notion-to-md
           npm ci
 
-      - name: Update README and summary/*.md
+      - name: Update README and operate/*.md
         env:
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
         run: |
-          node update.js # README.md 업데이트
-          node convert.js # summary/*.md 업데이트
+          node update_readme.js
+          node convert.js
         
       - name: Check if there are any changes
         id: verify_diff
         run: |
-          git diff --exit-code -- README.md summary/*.md images/* || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --exit-code -- README.md operate/*.md images/* || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push the markdown file
         if: steps.verify_diff.outputs.changed =='true'
