@@ -17,7 +17,7 @@ const databaseId = process.env.DATABASE_ID;
         ],
     });
 
-    let mdContent = `# 📚 Redhat Hands-on Labs\n\n\n✍🏻Redhat Hands-on에서 Operate 섹션만 정리했습니다.'\n\n\n`;
+    let mdContent = `# 📚 Redhat Hands-on Labs\n\n\n✍🏻Redhat Hands-on에서 Operate 섹션만 정리했습니다.\n\n\n`;
 
     const pages = response.results.map(page => {
     const name = page.properties?.Name?.title?.[0]?.text?.content;
@@ -29,11 +29,11 @@ const databaseId = process.env.DATABASE_ID;
         };
     });
 
-    mdContent += `<table>\n<thead>\n<tr>\n<th>Section</th>\n<th>:white_check_mark:</th>\n</tr>\n</thead>\n<tbody>\n`
+    mdContent += `<table>\n<thead>\n<tr>\n<th>📒Section</th>\n<th>📅Date</th>\n</tr>\n</thead>\n<tbody>\n`
 
     for (let page of pages){
         mdContent += `<tr>\n<td>${page.name}</td>\n`;
-        mdContent += (date) ? `<td>:white_check_mark:</td>\n</tr>\n` : `<td></td>\n</tr>\n`;
+        mdContent += (date) ? `<td>${date}</td>\n</tr>\n` : `<td></td>\n</tr>\n`;
     }
 
     mdContent += `</tbody>\n</table>\n`;
