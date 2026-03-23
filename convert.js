@@ -19,7 +19,7 @@ const databaseId = process.env.DATABASE_ID;
   
 (async () => {
     try {
-        const response = await notion.databases.retrieve({
+        const response = await notion.databases.query({
         database_id: databaseId,
         sorts: [
             {

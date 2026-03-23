@@ -7,7 +7,7 @@ const notion = new Client({auth : process.env.NOTION_API_KEY});
 const databaseId = process.env.DATABASE_ID;
   
 (async () => {
-    const response = await notion.databases.retrieve({
+    const response = await notion.databases.query({
         database_id: databaseId,
         sorts: [
             {
