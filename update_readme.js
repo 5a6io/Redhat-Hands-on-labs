@@ -17,7 +17,7 @@ const databaseId = process.env.DATABASE_ID;
         ],
     });
 
-    let mdContent = `# 📚Redhat Hands-on Labs\n\n\n✍🏻Redhat Hands-on에서 Operate 섹션만 정리했습니다.'\n\n\n`;
+    let mdContent = `# 📚 Redhat Hands-on Labs\n\n\n✍🏻Redhat Hands-on에서 Operate 섹션만 정리했습니다.'\n\n\n`;
 
     const pages = response.results.map(page => {
     const name = page.properties?.Name?.title?.[0]?.text?.content;
