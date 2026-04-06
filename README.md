@@ -14,7 +14,7 @@
 <tbody>
 <tr>
 <td>Configure Stratis with the command line interface</td>
-<td>[object Object]</td>
+<td>2026-04-06</td>
 </tr>
 </tbody>
 </table>
