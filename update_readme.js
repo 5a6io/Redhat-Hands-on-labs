@@ -21,7 +21,8 @@ const databaseId = process.env.DATABASE_ID;
 
     const pages = response.results.map(page => {
     const name = page.properties?.Name?.title?.[0]?.text?.content;
-    const date = page.properties?.Date?.date;
+    const rawDate = page.properties?.Date?.date?.start;
+    const date = rawDate ? new Date(rawDate).toISOString().split('T')[0] : "";
       
     return {
             name: name,
