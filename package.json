@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@notionhq/client": "^2.2.15",
-    "axios": "^1.13.6",
+    "axios": "^1.14.0",
     "dotenv": "^16.4.7",
     "notion-to-md": "^3.1.9"
   },

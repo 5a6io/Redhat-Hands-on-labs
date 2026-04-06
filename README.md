@@ -12,5 +12,9 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>Configure Stratis with the command line interface</td>
+<td>[object Object]</td>
+</tr>
 </tbody>
 </table>
