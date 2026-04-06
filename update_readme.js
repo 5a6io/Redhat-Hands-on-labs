@@ -33,7 +33,7 @@ const databaseId = process.env.DATABASE_ID;
 
     for (let page of pages){
         mdContent += `<tr>\n<td>${page.name}</td>\n`;
-        mdContent += (date) ? `<td>${date}</td>\n</tr>\n` : `<td></td>\n</tr>\n`;
+        mdContent += (page.date) ? `<td>${date}</td>\n</tr>\n` : `<td></td>\n</tr>\n`;
     }
 
     mdContent += `</tbody>\n</table>\n`;
